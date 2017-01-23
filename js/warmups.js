@@ -1,7 +1,7 @@
 directiveMadness.controller('warmupCtrl',
   ['$scope',
   function($scope) {
-  $scope.radioButtons;
+  // $scope.radioButtons;
   $scope.stateUp = "Up"
 
   $scope.hoverState = "LEAVE"

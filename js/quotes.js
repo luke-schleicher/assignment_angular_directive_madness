@@ -6,7 +6,20 @@ directiveMadness.controller('quoteCtrl',
     $scope.newQuote = {};
     $scope.id = 0
 
-    $scope.createQuote = function(){
+    $scope.createQuote = function(body, author){
+
+      console.log(body);
+      console.log(author);
+      debugger;
+
+      if ($scope.newQuote.body.length < 2) {
+        return false;
+      }
+
+      if ($scope.newQuote.author.length < 2) {
+        return false;
+      }
+
       var quote = {
         body: $scope.newQuote.body,
         author: $scope.newQuote.author,

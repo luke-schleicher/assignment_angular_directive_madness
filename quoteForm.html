@@ -1,5 +1,5 @@
-<form ng-submit="createQuote()" class="quote-form">
-  <textarea ng-model="newQuote.body"></textarea>
-  <input type="text" name="author" ng-model="newQuote.author">
+<form ng-submit="createQuote(quoteBody, author)" class="quote-form" name="quoteForm">
+  <textarea ng-model="newQuote.body" ng-minlength="2" name="quoteBody"></textarea>
+  <input type="text" name="author" ng-model="newQuote.author" ng-minlength="2" ng-maxlength="32">
   <input type="submit" >
 </form>
