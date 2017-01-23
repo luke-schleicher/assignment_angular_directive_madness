@@ -1,3 +1,15 @@
 footer p {
   text-align: center;
 }
+
+.quote-form .ng-valid {
+  border:5px green solid;
+}
+
+.quote-form .ng-invalid {
+  border:5px red solid;
+}
+
+.quote-form .ng-pristine {
+  border:1px gray solid;
+}
