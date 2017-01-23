@@ -17,6 +17,7 @@ directiveMadness.directive('isolated', function() {
     scope.sayHello = function(name) {
       alert('hello ' + name);
     };
+    var hello = scope.sayHello
   };
 
   return {
