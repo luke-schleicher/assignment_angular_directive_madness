@@ -20,3 +20,43 @@ directiveMadness.directive('mainHeader', function() {
   };
 
 });
+
+directiveMadness.directive('copyright', function() {
+
+  var linkFunc = function(scope, element, attributes) {
+
+    angular.element('#date').text(new Date().getFullYear());
+
+  };
+
+  return {
+    templateUrl: "/copyright.html",
+    restrict: "E",
+    scope: {},
+    transclude: true,
+    link: linkFunc
+  };
+
+});
+
+directiveMadness.directive('colorize', function() {
+
+  var changeColor = function(scope, element, attributes) {
+
+    element.css({ 
+      'color': attributes.color,
+      'background': attributes.background
+    }); 
+
+  };
+
+  return {
+    restrict: 'A',
+    scope: {
+      color: '@',
+      background: '@'
+    },
+    link: changeColor
+  };
+
+});
