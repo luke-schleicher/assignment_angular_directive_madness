@@ -1,4 +1,4 @@
-
-  <p ng-repeat="quote in quotes">
-    {{ quote.body }} -- {{ quote.author }}
+  <p ng-show="quotes.length === 0"> There are no quotes! </p>
+  <p ng-repeat="quote in quotes" id="quote-{{quote.id}}">
+    {{ quote.body }} -- {{ quote.author }} -- <a ng-click="deleteQuote(quote.id)"> delete! </a>
   </p>
