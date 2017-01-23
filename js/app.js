@@ -9,3 +9,14 @@ directiveMadness.directive('mainNav', function() {
   };
 
 });
+
+directiveMadness.directive('mainHeader', function() {
+
+  return {
+    templateUrl: "/mainHeader.html",
+    restrict: "E",
+    scope: {},
+    transclude: true
+  };
+
+});

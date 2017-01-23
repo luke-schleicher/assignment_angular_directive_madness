@@ -12,13 +12,20 @@
 
     <main-nav></main-nav>
 
-    <form ng-model="radio-buttons">
-      <input type="radio" name="number" value="1">
-      <input type="radio" name="number" value="2">
-      <input type="radio" name="number" value="3">
-      <input type="radio" name="number" value="4">
-      <input type="radio" name="number" value="5">
-      <input type="submit">
+    <main-header>This is a title!</main-header>
+
+    <p ng-show="!radioButtons"> No button is selected! </p>
+    <p ng-hide="!radioButtons">{{radioButtons}}!</p>
+    <p ng-show="radioButtons % 2 === 1"> Number is odd! </p>
+    <p ng-hide="radioButtons % 2 !== 0"> Number is even!</p>
+
+
+    <form>
+      <input type="radio" name="number" value="1" ng-model="radioButtons">
+      <input type="radio" name="number" value="2" ng-model="radioButtons">
+      <input type="radio" name="number" value="3" ng-model="radioButtons">
+      <input type="radio" name="number" value="4" ng-model="radioButtons">
+      <input type="radio" name="number" value="5" ng-model="radioButtons">
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
