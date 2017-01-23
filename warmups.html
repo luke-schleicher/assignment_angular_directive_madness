@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="css/stylesheet.css">
   </head>
-  <body ng-controller="warmupCtrl">
+  <body ng-controller="warmupCtrl" ng-mousedown="toggleState()" ng-mouseup="toggleState()">
 
     <main-nav></main-nav>
 
@@ -32,6 +32,13 @@
       </form>      
     
     </div>
+
+    <p> Mouse is {{stateUp}} </p>
+
+    <p ng-mouseenter="toggleHover()" ng-mouseleave="toggleHover()">Hover state: {{hoverState}} </p>
+
+    <p ng-dblclick="doubleClick()"> I'm {{doubleClicked}}clickable! </p>
+    
     
     <copyright>Apple Computer</copyright>
 

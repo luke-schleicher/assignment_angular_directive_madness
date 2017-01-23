@@ -44,8 +44,8 @@ directiveMadness.directive('colorize', function() {
   var changeColor = function(scope, element, attributes) {
 
     element.css({ 
-      'color': attributes.color,
-      'background': attributes.background
+      'color': scope.color,
+      'background': scope.background
     }); 
 
   };
@@ -60,3 +60,4 @@ directiveMadness.directive('colorize', function() {
   };
 
 });
+
