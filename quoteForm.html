@@ -1,5 +1,8 @@
-<form ng-submit="createQuote(quoteBody, author)" class="quote-form" name="quoteForm">
-  <textarea ng-model="newQuote.body" ng-minlength="2" name="quoteBody"></textarea>
-  <input type="text" name="author" ng-model="newQuote.author" ng-minlength="2" ng-maxlength="32">
-  <input type="submit" >
+<form ng-submit="createQuote(quoteForm)" class="quote-form" name="quoteForm">
+  <textarea ng-model="newQuote.body" ng-minlength="2" name="quoteBody" required></textarea>
+  <input type="text" name="author" ng-model="newQuote.author" ng-minlength="2" ng-maxlength="32" required>
+  <input ng-hide="quoteForm.$invalid || quoteForm.$pristine" type="submit" >
+
+  <p ng-show="tooShort"> Your fields were too short!</p>
+  <p ng-show="tooLong"> Your author can have a max of 32 letters</p>
 </form>

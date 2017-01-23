@@ -5,20 +5,21 @@ directiveMadness.controller('quoteCtrl',
     $scope.quotes = [];
     $scope.newQuote = {};
     $scope.id = 0
+    $scope.tooShort = false;
+    $scope.tooLong = false;
 
-    $scope.createQuote = function(body, author){
+    $scope.createQuote = function(form){
 
-      console.log(body);
-      console.log(author);
-      debugger;
-
-      if ($scope.newQuote.body.length < 2) {
+      if(form.$invalid){
+        if(form.$error.minlength){
+          $scope.tooShort = true
+        }else if(form.$error.maxlength){
+          $scope.tooLong = true
+        }
         return false;
       }
 
-      if ($scope.newQuote.author.length < 2) {
-        return false;
-      }
+    
 
       var quote = {
         body: $scope.newQuote.body,
@@ -28,6 +29,12 @@ directiveMadness.controller('quoteCtrl',
       ++$scope.id
       $scope.newQuote = {}
       $scope.quotes.push(quote)
+
+      form.$setPristine()
+      form.$setUntouched()
+      
+      $scope.tooShort = false
+      $scope.tooLong = false
     };
 
     $scope.deleteQuote = function(id){
